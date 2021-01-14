@@ -10,13 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_13_234110) do
+ActiveRecord::Schema.define(version: 2021_01_14_154728) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "final_ratings", force: :cascade do |t|
+  create_table "anticipation_ratings", force: :cascade do |t|
     t.integer "rating"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "final_ratings", force: :cascade do |t|
+    t.integer "partner1_final_rating"
+    t.integer "partner2_final_rating"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -24,12 +31,13 @@ ActiveRecord::Schema.define(version: 2021_01_13_234110) do
   create_table "partnership_trailers", force: :cascade do |t|
     t.integer "partnership_id"
     t.integer "trailer_id"
+    t.integer "partner1_rating"
+    t.integer "partner2_rating"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "partnerships", force: :cascade do |t|
-    t.string "partner_id"
     t.integer "partner1_id"
     t.integer "partner2_id"
     t.datetime "created_at", precision: 6, null: false
@@ -41,7 +49,6 @@ ActiveRecord::Schema.define(version: 2021_01_13_234110) do
     t.string "title"
     t.string "description"
     t.string "genre"
-    t.integer "anticipation_rating_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

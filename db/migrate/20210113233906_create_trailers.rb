@@ -5,7 +5,7 @@ class CreateTrailers < ActiveRecord::Migration[6.0]
       t.string :title
       t.string :description
       t.string :genre
-      t.integer :anticipation_rating_id
+      
 
       t.timestamps
     end

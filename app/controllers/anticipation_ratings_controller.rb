@@ -1,0 +1,2 @@
+class AnticipationRatingsController < ApplicationController
+end
