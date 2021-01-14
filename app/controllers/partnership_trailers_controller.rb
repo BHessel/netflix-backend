@@ -1,0 +1,2 @@
+class PartnershipTrailersController < ApplicationController
+end
