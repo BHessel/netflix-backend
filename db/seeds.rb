@@ -28,3 +28,6 @@ narcos = Trailer.find_or_create_by(url: 'https://youtu.be/xl8zdCY-abw',
                           description: 'US and Columbian officials take on a massive Coke Cartel in the 80s',
                           genre: 'Action'
                           )
+
+
+bs = Partnership.find_or_create_by(partner1_id:User.first.id, partner2_id:User.second.id)
