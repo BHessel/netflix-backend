@@ -7,8 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-ben = User.find_or_create_by(username: 'Ben', password: 'password')
-shaina = User.find_or_create_by(username: 'Shaina', password: 'password')
+ben = User.find_or_create_by(username: 'Ben', password: 'password', partner_id: 2)
+shaina = User.find_or_create_by(username: 'Shaina', password: 'password', partner_id: 1)
 karson = User.find_or_create_by(username: 'Karson', password: 'password')
 
 stranger_things = Trailer.find_or_create_by(url: 'https://youtu.be/b9EkMc79ZSU',
@@ -30,4 +30,8 @@ narcos = Trailer.find_or_create_by(url: 'https://youtu.be/xl8zdCY-abw',
                           )
 
 
-bs = Partnership.find_or_create_by(partner1_id:User.first.id, partner2_id:User.second.id)
+bs = Partnership.find_or_create_by(partner1_id: User.first.id,
+                                   partner2_id: User.second.id,
+                                   partner1_approval: false,
+                                   partner2_approval: false
+                                )
