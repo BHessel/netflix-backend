@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  resources :anticipation_ratings
-  resources :final_ratings
-  resources :partnership_trailers
   resources :trailers
   resources :partnerships
   resources :users

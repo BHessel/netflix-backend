@@ -1,2 +1,0 @@
-class AnticipationRatingsController < ApplicationController
-end
