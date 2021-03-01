@@ -16,7 +16,12 @@ class UsersController < ApplicationController
     
     def create
         user = User.new(user_params)
-            
+        if user.valid?
+            user.save
+            render json: user
+        else
+            render :new
+        end 
     end
 
     def edit
@@ -26,6 +31,7 @@ class UsersController < ApplicationController
     def update
         user = User.find(params[:id])
         user.update(user_params)
+        render json: user
     end
 
     def destroy
